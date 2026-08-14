@@ -1,0 +1,22 @@
+{
+  "name": "nomixup_10shot_mc03",
+  "seed": 2028,
+  "shots": 10,
+  "lu_size": 160,
+  "n_pool": 4800,
+  "num_round": 8,
+  "b_per_round": 480,
+  "time_sec": 1709.76,
+  "best_acc": 95.88,
+  "acc_history": [
+    82.63,
+    95.75,
+    94.62,
+    94.69,
+    95.88,
+    95.25,
+    94.5,
+    95.56,
+    95.75
+  ]
+}

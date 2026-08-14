@@ -1,0 +1,2 @@
+method,5shot_mc,10shot_mc,5shot_mean_std,10shot_mean_std
+w/o random masking,"94.69,94.88,97.13,93.88,94.06","97.5,96.8125,97.4375,95.875,96.75",94.93 ± 1.30,96.88 ± 0.66

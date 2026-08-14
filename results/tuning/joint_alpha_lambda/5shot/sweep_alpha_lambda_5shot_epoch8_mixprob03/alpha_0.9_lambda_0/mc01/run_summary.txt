@@ -1,0 +1,8 @@
+name=alpha_0.9_lambda_0_mc01
+seed=2026
+shots=5
+label_universe=80 / pool=4800
+num_round=8 | B_per_round=480
+best_acc=92.25%
+acc_history=82.63, 83.88, 89.44, 88.44, 92.19, 92.25, 89.00, 86.06, 89.69
+time_sec=813.93

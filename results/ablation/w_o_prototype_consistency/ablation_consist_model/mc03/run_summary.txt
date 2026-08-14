@@ -1,0 +1,8 @@
+name=consist_model_mc03
+seed=2028
+shots=5
+label_universe=80 / pool=4800
+num_round=8 | B_per_round=480
+best_acc=89.00%
+acc_history=82.63, 89.00, 87.62, 87.19, 83.81, 87.25, 85.81, 85.12, 85.94
+time_sec=2279.82

@@ -1,0 +1,22 @@
+{
+  "name": "alpha_0.7_lambda_0.7_mc00",
+  "seed": 2025,
+  "shots": 10,
+  "lu_size": 160,
+  "n_pool": 4800,
+  "num_round": 8,
+  "b_per_round": 480,
+  "time_sec": 1756.13,
+  "best_acc": 97.0,
+  "acc_history": [
+    82.63,
+    97.0,
+    89.19,
+    95.0,
+    93.0,
+    89.81,
+    90.94,
+    91.19,
+    88.38
+  ]
+}

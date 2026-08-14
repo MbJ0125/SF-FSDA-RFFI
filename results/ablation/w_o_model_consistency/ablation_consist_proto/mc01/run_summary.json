@@ -1,0 +1,22 @@
+{
+  "name": "consist_proto_mc01",
+  "seed": 2026,
+  "shots": 5,
+  "lu_size": 80,
+  "n_pool": 4800,
+  "num_round": 8,
+  "b_per_round": 480,
+  "time_sec": 2282.21,
+  "best_acc": 91.62,
+  "acc_history": [
+    82.63,
+    84.44,
+    89.88,
+    86.94,
+    88.0,
+    91.25,
+    89.31,
+    90.0,
+    91.62
+  ]
+}

@@ -1,0 +1,8 @@
+name=alpha_0.9_lambda_0.7_mc02
+seed=2027
+shots=5
+label_universe=80 / pool=4800
+num_round=8 | B_per_round=480
+best_acc=95.44%
+acc_history=82.63, 82.75, 95.44, 93.31, 95.31, 94.25, 94.88, 93.88, 94.50
+time_sec=878.04

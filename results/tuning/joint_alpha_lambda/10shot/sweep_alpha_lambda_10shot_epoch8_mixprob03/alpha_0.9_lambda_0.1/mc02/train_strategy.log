@@ -1,0 +1,64 @@
+------Train at Round 1 with 164 Annotated Data and 4636 Unlabeled Data-----
+[Round 1, Epoch 0] Lmix(ce)=0.4566  Lpgra=0.2344  Total=0.6910
+[Round 1, Epoch 1] Lmix(ce)=0.3452  Lpgra=0.2360  Total=0.5812
+[Round 1, Epoch 2] Lmix(mix)=0.2832  Lpgra=0.2351  Total=0.5183
+[Round 1, Epoch 3] Lmix(ce)=0.3030  Lpgra=0.2346  Total=0.5377
+[Round 1, Epoch 4] Lmix(mix)=0.2567  Lpgra=0.2358  Total=0.4925
+[Round 1, Epoch 5] Lmix(mix)=2.7385  Lpgra=0.2350  Total=2.9735
+[Round 1, Epoch 6] Lmix(ce)=0.2103  Lpgra=0.2335  Total=0.4438
+[Round 1, Epoch 7] Lmix(ce)=0.2129  Lpgra=0.2349  Total=0.4478
+------Evaluate at Round 1 on 1600 Data-----
+------Train at Round 2 with 174 Annotated Data and 4626 Unlabeled Data-----
+[Round 2, Epoch 0] Lmix(ce)=0.1996  Lpgra=0.2339  Total=0.4335
+[Round 2, Epoch 1] Lmix(ce)=0.1642  Lpgra=0.2338  Total=0.3980
+[Round 2, Epoch 2] Lmix(ce)=0.1865  Lpgra=0.2357  Total=0.4222
+[Round 2, Epoch 3] Lmix(ce)=0.1440  Lpgra=0.2353  Total=0.3793
+[Round 2, Epoch 4] Lmix(ce)=0.1616  Lpgra=0.2331  Total=0.3947
+[Round 2, Epoch 5] Lmix(ce)=0.1409  Lpgra=0.2340  Total=0.3749
+[Round 2, Epoch 6] Lmix(ce)=0.1248  Lpgra=0.2338  Total=0.3586
+[Round 2, Epoch 7] Lmix(ce)=0.1343  Lpgra=0.2358  Total=0.3701
+------Evaluate at Round 2 on 1600 Data-----
+------Train at Round 3 with 183 Annotated Data and 4617 Unlabeled Data-----
+[Round 3, Epoch 0] Lmix(ce)=0.1503  Lpgra=0.2395  Total=0.3898
+[Round 3, Epoch 1] Lmix(ce)=0.1266  Lpgra=0.2419  Total=0.3685
+[Round 3, Epoch 2] Lmix(ce)=0.1201  Lpgra=0.2351  Total=0.3552
+[Round 3, Epoch 3] Lmix(ce)=0.1117  Lpgra=0.2396  Total=0.3513
+[Round 3, Epoch 4] Lmix(mix)=0.1358  Lpgra=0.2326  Total=0.3685
+[Round 3, Epoch 5] Lmix(ce)=0.1253  Lpgra=0.2344  Total=0.3597
+[Round 3, Epoch 6] Lmix(ce)=0.1278  Lpgra=0.2330  Total=0.3608
+[Round 3, Epoch 7] Lmix(mix)=0.9850  Lpgra=0.2419  Total=1.2269
+------Evaluate at Round 3 on 1600 Data-----
+------Train at Round 4 with 190 Annotated Data and 4610 Unlabeled Data-----
+[Round 4, Epoch 0] Lmix(mix)=2.0041  Lpgra=0.2514  Total=2.2555
+[Round 4, Epoch 1] Lmix(mix)=0.1167  Lpgra=0.2406  Total=0.3573
+[Round 4, Epoch 2] Lmix(ce)=0.1009  Lpgra=0.2577  Total=0.3586
+[Round 4, Epoch 3] Lmix(ce)=0.0962  Lpgra=0.2378  Total=0.3340
+[Round 4, Epoch 4] Lmix(ce)=0.0942  Lpgra=0.2391  Total=0.3333
+[Round 4, Epoch 5] Lmix(ce)=0.0890  Lpgra=0.2377  Total=0.3268
+[Round 4, Epoch 6] Lmix(mix)=1.9327  Lpgra=0.2493  Total=2.1821
+[Round 4, Epoch 7] Lmix(ce)=0.1112  Lpgra=0.2472  Total=0.3584
+------Evaluate at Round 4 on 1600 Data-----
+------Train at Round 5 with 200 Annotated Data and 4600 Unlabeled Data-----
+[Round 5, Epoch 0] Lmix(ce)=0.2774  Lpgra=0.2349  Total=0.5122
+[Round 5, Epoch 1] Lmix(ce)=0.3799  Lpgra=0.2336  Total=0.6135
+[Round 5, Epoch 2] Lmix(ce)=0.3388  Lpgra=0.2358  Total=0.5746
+[Round 5, Epoch 3] Lmix(ce)=1.0071  Lpgra=0.2375  Total=1.2447
+[Round 5, Epoch 4] Lmix(mix)=0.7562  Lpgra=0.2354  Total=0.9916
+[Round 5, Epoch 5] Lmix(mix)=1.7990  Lpgra=0.2348  Total=2.0338
+[Round 5, Epoch 6] Lmix(ce)=0.2462  Lpgra=0.2341  Total=0.4803
+[Round 5, Epoch 7] Lmix(mix)=1.3878  Lpgra=0.2341  Total=1.6218
+------Evaluate at Round 5 on 1600 Data-----
+------Train at Round 6 with 209 Annotated Data and 4591 Unlabeled Data-----
+[Round 6, Epoch 0] Lmix(mix)=0.1780  Lpgra=0.2352  Total=0.4132
+[Round 6, Epoch 1] Lmix(ce)=0.1490  Lpgra=0.2343  Total=0.3833
+[Round 6, Epoch 2] Lmix(ce)=0.3620  Lpgra=0.2345  Total=0.5965
+[Round 6, Epoch 3] Lmix(ce)=0.2925  Lpgra=0.2347  Total=0.5272
+[Round 6, Epoch 4] Lmix(ce)=0.1749  Lpgra=0.2354  Total=0.4103
+[Round 6, Epoch 5] Lmix(ce)=0.1040  Lpgra=0.2368  Total=0.3408
+[Round 6, Epoch 6] Lmix(ce)=0.2103  Lpgra=0.2342  Total=0.4446
+[Round 6, Epoch 7] Lmix(ce)=0.1584  Lpgra=0.2354  Total=0.3938
+------Evaluate at Round 6 on 1600 Data-----
+------Train at Round 7 with 219 Annotated Data and 4581 Unlabeled Data-----
+[Round 7, Epoch 0] Lmix(mix)=0.1138  Lpgra=0.2353  Total=0.3492
+[Round 7, Epoch 1] Lmix(ce)=0.0780  Lpgra=0.2346  Total=0.3126
+[Round 7, Epoch 2] Lmix(mix)=0.7738  Lpgra=0.2344  Total=1.0082

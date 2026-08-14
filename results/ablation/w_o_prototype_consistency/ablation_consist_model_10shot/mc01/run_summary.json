@@ -1,0 +1,22 @@
+{
+  "name": "consist_model_10shot_mc01",
+  "seed": 2026,
+  "shots": 10,
+  "lu_size": 160,
+  "n_pool": 4800,
+  "num_round": 8,
+  "b_per_round": 480,
+  "time_sec": 1773.28,
+  "best_acc": 87.75,
+  "acc_history": [
+    82.63,
+    86.31,
+    86.69,
+    77.56,
+    86.06,
+    87.75,
+    85.31,
+    85.56,
+    83.25
+  ]
+}

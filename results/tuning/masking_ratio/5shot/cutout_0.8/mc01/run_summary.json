@@ -1,0 +1,19 @@
+{
+  "name": "cutout_0.8_mc01",
+  "seed": 2026,
+  "shots": 5,
+  "lu_size": 80,
+  "n_pool": 4800,
+  "num_round": 8,
+  "b_per_round": 480,
+  "time_sec": 517.72,
+  "best_acc": 95.88,
+  "acc_history": [
+    82.63,
+    95.5,
+    95.88,
+    94.19,
+    92.56,
+    94.0
+  ]
+}
