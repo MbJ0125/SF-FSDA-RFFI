@@ -104,10 +104,14 @@ def main():
         run_best = []
         run_histories = []
 
+        # Random RF Signal Masking 训练变换（对应论文的 masking ratio）
+        cutout_fn = make_cutout_transform(cut_ratio)
+
         for mc in range(MC_RUNS):
             seed = SEED_BASE + mc
             set_global_seed(seed)
             args = build_args(shot, cd, lam, qb, seed, mc)
+            args._cutout_fn = cutout_fn  # 应用 Random RF Signal Masking 变换
             os.makedirs(args.output_dir, exist_ok=True)
 
             # 应用 patch
@@ -125,7 +129,7 @@ def main():
             with open(os.path.join(args.output_dir, "raw_result.json"), "w") as f:
                 json.dump({
                     "shot": shot, "mc": mc, "seed": seed,
-                    "beta_pgra": 1.0, "cutout_ratio": CUTOUT_RATIO,
+                    "beta_pgra": 1.0, "cutout_ratio": cut_ratio,
                     "best_acc": best_acc,
                     "acc_history": acc_history,
                 }, f, indent=2)
@@ -149,13 +153,13 @@ def main():
             w = csv.writer(f)
             w.writerow(["shot", "beta_pgra", "cutout_ratio",
                         "mean_best", "std_best", "max_best", "all_best"])
-            w.writerow([shot, 1.0, CUTOUT_RATIO,
+            w.writerow([shot, 1.0, cut_ratio,
                         round(mean_best, 4), round(std_best, 4), round(max_best, 4),
                         ",".join([f"{x:.4f}" for x in run_best])])
 
         # 写入纯文本结果
         with open(os.path.join(shot_dir, "result.txt"), "w") as f:
-            f.write(f"Method: CAS + PGRA(beta=1.0) + Cutout(ratio={CUTOUT_RATIO})\n")
+            f.write(f"Method: CAS + PGRA(beta=1.0) + Cutout(ratio={cut_ratio})\n")
             f.write(f"Shot: {shot}\n")
             f.write(f"MC runs: {MC_RUNS}\n")
             f.write(f"All best: {', '.join(f'{x:.2f}%' for x in run_best)}\n")
@@ -168,7 +172,7 @@ def main():
     print(f"{'='*60}")
     print(f"  {'Shot':>5s}  {'Mean±Std':>12s}  {'Max':>8s}  {'All':>24s}")
     print(f"  {'-'*53}")
-    for shot, cd, lam, qb in SHOT_CFGS:
+    for shot, cd, lam, qb, cut_ratio in SHOT_CFGS:
         csv_path = f"{OUT_ROOT}/{shot}shot/final_summary.csv"
         if os.path.exists(csv_path):
             with open(csv_path) as f:
