@@ -3,7 +3,7 @@
 **Source-Free Few-Shot Domain Adaptation for Channel-Robust Radio Frequency Fingerprint Identification**
 Mingbo Jia, Jie Zhang, Tiantian Tang, Guan Gui, Tomoaki Ohtsuki, and Hikmet Sari. *IEEE Communications Letters* (under review).
 
-This repository provides the implementation of a **class-center-guided source-free few-shot domain adaptation (SF-FSDA)** framework for **radio frequency fingerprint identification (RFFI)**. The framework adapts a source-pretrained RFFI model to an unseen target channel using only **a few labeled target samples and unlabeled target signals** — **without access to source data or extra annotation**. It is built on top of [LFTL (ECCV 2024)](https://arxiv.org/abs/2407.18899).
+This repository provides the implementation of a **class-center-guided source-free few-shot domain adaptation (SF-FSDA)** framework for **radio frequency fingerprint identification (RFFI)**. The framework adapts a source-pretrained RFFI model to an unseen target channel using only **a few labeled target samples and unlabeled target signals** — **without access to source data or extra annotation**.
 
 ## Method
 
@@ -58,10 +58,24 @@ results/
 
 ## Requirements
 
-- `python=3.10`
-- `torch=2.3.0`
-- `torchvision`
-- `numpy`
+Tested with `python=3.10` and a CUDA-enabled `torch=2.3.0` build. Install the dependencies:
+
+```bash
+pip install torch==2.3.0 torchvision==0.18.0 numpy scikit-learn Pillow
+```
+
+| Package | Version | Purpose |
+| :--- | :--- | :--- |
+| python | 3.10 | runtime |
+| torch | 2.3.0 | model training & adaptation |
+| torchvision | 0.18.0 | data transforms (matches torch 2.3.0) |
+| numpy | ≥ 1.24 | RF-signal processing, metrics |
+| scikit-learn | ≥ 1.3 | data splitting, evaluation metrics |
+| Pillow | ≥ 10.0 | image-style dataset loading |
+
+Notes:
+- `OpenCV` (`cv2`) is imported only for image datasets (guarded import) and is **not** required for the RF pipeline.
+- The optional WiSig branch (`wisig` / `wisig-eq` datasets) uses a separate `wisig_dataloader` that is not part of this repository.
 
 ## Dataset
 
@@ -92,10 +106,6 @@ This runs both shot budgets with MC = 5 (seeds 2025–2029):
 | 10-shot | 0.7 | 0.9 | 10 | 0.4 |
 
 Results are written to `exp_cas_pgra1_cutout/{shot}shot/` (`final_summary.csv`, per-`mcXX` logs). The name `cutout` in the script corresponds to the Random RF Signal Masking strategy in the paper.
-
-## Acknowledgment
-
-The codebase is based on the SF-DA work [tim-learn/SHOT](https://github.com/tim-learn/SHOT) and [LFTL (ECCV 2024)](https://arxiv.org/abs/2407.18899). We thank the authors for releasing their code.
 
 ## Citation
 
