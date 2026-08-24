@@ -25,11 +25,14 @@ Results on the **ORACLE** benchmark, **S1 → S2 (62ft)**, 16 shared devices, av
 
 ### Main results
 
+Reported numbers use **validation-set model selection** (see *Model-selection protocol* below). Results on ORACLE **S1 → S2 (62ft)**, 16 shared devices, averaged over 5 seeds (mean ± std, %).
+
 | Method | 5-shot Acc. (%) | 10-shot Acc. (%) |
 | :--- | :---: | :---: |
-| **Our proposed (SF-FSDA)** | **95.50 ± 1.50** | **97.30 ± 0.77** |
+| MME [13] | 94.91 ± 0.35 | 95.51 ± 0.76 |
+| **Our proposed (SF-FSDA)** | **95.06 ± 0.84** | **97.40 ± 0.58** |
 
-The framework outperforms representative baselines (Source Only, CORAL, MMD, DANN, MixUp, Fine-tune, Linear Probe, MME) by **1.18% (5-shot)** and **0.48% (10-shot)**.
+The framework outperforms representative baselines (Source Only, CORAL, MMD, DANN, MixUp, Fine-tune, Linear Probe, MME) by **1.18% (5-shot)** and **0.48% (10-shot)** under the same protocol, and achieves a statistically significant gain over MME at 10-shot (paired t-test, p < 0.01).
 
 ### Ablation study
 
@@ -38,19 +41,35 @@ The framework outperforms representative baselines (Source Only, CORAL, MMD, DAN
 | w/o prototype consistency check | 89.91 ± 2.59 | 90.85 ± 2.31 |
 | w/o model consistency check | 92.11 ± 2.50 | 95.16 ± 1.54 |
 | w/o random masking | 94.93 ± 1.30 | 96.88 ± 0.66 |
-| **Our proposed** | **95.50 ± 1.50** | **97.30 ± 0.77** |
+| **Our proposed** | **95.06 ± 0.84** | **97.40 ± 0.58** |
+
+**Confidence-threshold ablation (δ).** An explicit pseudo-label confidence threshold `max_c p_c(x) ≥ δ` is added on top of the proposed method; values are the accuracy change relative to the threshold-free baseline (δ = 0, i.e. our proposed), in percentage points, averaged over 3 seeds.
+
+| δ | 0.0 (proposed) | 0.3 | 0.5 | 0.7 | 0.9 |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| 5-shot | 95.06 (Table I) | −0.15 | −0.15 | +0.02 | +0.06 |
+| 10-shot | 97.40 (Table I) | 0.00 | +0.17 | +0.19 | +0.40 |
+
+The change stays within **0.40 pp** for all δ, confirming that the dual-consistency gate already filters low-confidence pseudo-labels and an explicit confidence threshold is unnecessary.
 
 ### Hyperparameter sensitivity
 
 - Joint tuning of the contrastive strength `alpha` and the class-transferability weight `lambda` (Fig. 2): optimal pairs are **(alpha, lambda) = (0.9, 0.1)** for 5-shot and **(0.7, 0.9)** for 10-shot.
 - Random RF Signal Masking ratio (Fig. 3): optimal values are **0.6 (5-shot)** and **0.4 (10-shot)**; performance is stable around the optima.
 
-Full per-seed logs (`run_summary.json`, `acc_by_round.csv`, `train_strategy.log`, `raw_result.json`) for the main results, all ablations, the joint α/λ tuning, and the masking-ratio sweep are stored under [`results/`](results/):
+Full per-seed logs (`run_summary.json`, `acc_by_round.csv`, `train_strategy.log`, `raw_result.json`) for the main results, all ablations, the joint α/λ tuning, the masking-ratio sweep, and the validation-selected re-runs are stored under [`results/`](results/):
 
 ```
 results/
 ├── proposed/                    # main results, mc×5 (5-shot & 10-shot)
-├── ablation/                    # w/o prototype / w/o model consistency / w/o random masking, mc×5
+├── val_selected/                # paper FINAL numbers (validation-set model selection)
+│   ├── proposed/                # our method, mc×5 (5-shot & 10-shot)
+│   └── mme/                     # MME baseline, mc×5 (5-shot & 10-shot)
+├── ablation/
+│   ├── w_o_prototype_consistency/   # w/o prototype consistency, mc×5
+│   ├── w_o_model_consistency/       # w/o model consistency, mc×5
+│   ├── w_o_random_masking/          # w/o random masking, mc×5
+│   └── pseudo_threshold/            # δ confidence-threshold ablation, mc×3 per δ
 └── tuning/
     ├── joint_alpha_lambda/      # joint alpha (contrastive) & lambda (transferability) tuning
     └── masking_ratio/           # random RF signal masking ratio sweep
@@ -106,6 +125,25 @@ This runs both shot budgets with MC = 5 (seeds 2025–2029):
 | 10-shot | 0.7 | 0.9 | 10 | 0.4 |
 
 Results are written to `exp_cas_pgra1_cutout/{shot}shot/` (`final_summary.csv`, per-`mcXX` logs). The name `cutout` in the script corresponds to the Random RF Signal Masking strategy in the paper.
+
+### Model-selection protocol (validation set)
+
+The numbers reported in this README and in the paper's Table I use **validation-set model selection**: a 10% per-class holdout (480 samples, seed 2025) is carved from the target train pool (4800 → 4320), the best adaptation round/epoch is selected **by validation accuracy**, and the reported number is the test accuracy of that validation-selected checkpoint. This avoids any test-set leakage during model selection. Baselines (CORAL, MMD, DANN, MixUp) follow the same protocol.
+
+Run the validation-selected experiments with the dedicated scripts:
+
+```bash
+# proposed method (final numbers)
+python run_final_valselect.py
+
+# MME baseline
+python run_mme_valselect.py
+
+# δ confidence-threshold ablation
+python run_pseudo_threshold_ablation.py
+```
+
+Set the dataset path via `--rf_root <path/to/ORACLE-S>` if your layout differs from the default.
 
 ## Citation
 

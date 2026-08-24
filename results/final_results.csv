@@ -1,4 +1,4 @@
-Experiment_Type,Seed,Best,R0,R1,R2,R3,R4,R5,R6,R7,R8
+﻿Experiment_Type,Seed,Best,R0,R1,R2,R3,R4,R5,R6,R7,R8
 Supervised Source Only 5-shot S2025,82.625,,,,,,,,,,
 Supervised Source Only 5-shot S2026,82.625,,,,,,,,,,
 Supervised Source Only 5-shot S2027,82.625,,,,,,,,,,
@@ -99,3 +99,28 @@ UnsupDA MIXUP Run1,70.19,,,,,,,,,,
 UnsupDA MIXUP Run2,70.19,,,,,,,,,,
 UnsupDA MIXUP Run3,71.56,,,,,,,,,,
 UnsupDA MIXUP Run4,71.56,,,,,,,,,,
+--- Paper FINAL numbers (validation-set model selection) ---
+Proposed (val-selected) 5-shot S2025,95.75
+Proposed (val-selected) 5-shot S2026,95.25
+Proposed (val-selected) 5-shot S2027,93.625
+Proposed (val-selected) 5-shot S2028,95.125
+Proposed (val-selected) 5-shot S2029,95.5625
+Proposed (val-selected) 5-shot mean,95.06,std=0.84
+Proposed (val-selected) 10-shot S2025,96.9375
+Proposed (val-selected) 10-shot S2026,97.4375
+Proposed (val-selected) 10-shot S2027,98.375
+Proposed (val-selected) 10-shot S2028,97.25
+Proposed (val-selected) 10-shot S2029,97.0
+Proposed (val-selected) 10-shot mean,97.40,std=0.58
+MME (val-selected) 5-shot S2025,94.875
+MME (val-selected) 5-shot S2026,95.5
+MME (val-selected) 5-shot S2027,94.5625
+MME (val-selected) 5-shot S2028,94.75
+MME (val-selected) 5-shot S2029,94.875
+MME (val-selected) 5-shot mean,94.91,std=0.35
+MME (val-selected) 10-shot S2025,94.375
+MME (val-selected) 10-shot S2026,96.5
+MME (val-selected) 10-shot S2027,95.4375
+MME (val-selected) 10-shot S2028,95.5
+MME (val-selected) 10-shot S2029,95.75
+MME (val-selected) 10-shot mean,95.51,std=0.76

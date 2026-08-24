@@ -1,0 +1,8 @@
+name=finalvs_5s_mc02
+seed=2027
+shots=5
+label_universe=80 / pool=4320
+num_round=8 | B_per_round=432
+best_acc=95.42%
+acc_history=82.63, 91.88, 94.58, 93.54, 95.00, 92.08, 95.21, 95.42, 95.21
+time_sec=789.17

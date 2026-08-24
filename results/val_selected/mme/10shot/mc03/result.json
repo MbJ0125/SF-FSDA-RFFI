@@ -1,0 +1,11 @@
+{
+  "variant": "standalone_valselect",
+  "shot": 10,
+  "mc": 3,
+  "seed": 2028,
+  "val_seed": 2025,
+  "val_ratio": 0.1,
+  "val_best_acc": 94.79166666666666,
+  "test_best_acc": 95.5,
+  "test_selected_best": 95.6875
+}

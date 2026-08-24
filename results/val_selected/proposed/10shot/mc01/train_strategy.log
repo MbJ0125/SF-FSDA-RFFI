@@ -1,0 +1,80 @@
+------Train at Round 1 with 164 Annotated Data and 4156 Unlabeled Data-----
+[Round 1, Epoch 0] Lmix(ce)=0.6474  Lpgra=2.5451  Total=3.1925
+[Round 1, Epoch 1] Lmix(ce)=0.6274  Lpgra=2.5120  Total=3.1394
+[Round 1, Epoch 2] Lmix(ce)=0.6925  Lpgra=2.5031  Total=3.1956
+[Round 1, Epoch 3] Lmix(ce)=0.3781  Lpgra=2.4715  Total=2.8497
+[Round 1, Epoch 4] Lmix(ce)=0.4273  Lpgra=2.4742  Total=2.9016
+[Round 1, Epoch 5] Lmix(ce)=0.5293  Lpgra=2.4709  Total=3.0003
+[Round 1, Epoch 6] Lmix(ce)=0.3116  Lpgra=2.4615  Total=2.7731
+[Round 1, Epoch 7] Lmix(ce)=0.3682  Lpgra=2.4483  Total=2.8165
+------Evaluate at Round 1 on 480 Data-----
+------Train at Round 2 with 174 Annotated Data and 4146 Unlabeled Data-----
+[Round 2, Epoch 0] Lmix(ce)=0.3222  Lpgra=2.4434  Total=2.7656
+[Round 2, Epoch 1] Lmix(ce)=0.2460  Lpgra=2.4223  Total=2.6684
+[Round 2, Epoch 2] Lmix(ce)=0.2165  Lpgra=2.3974  Total=2.6139
+[Round 2, Epoch 3] Lmix(ce)=0.2336  Lpgra=2.4090  Total=2.6426
+[Round 2, Epoch 4] Lmix(ce)=0.2294  Lpgra=2.3912  Total=2.6206
+[Round 2, Epoch 5] Lmix(ce)=0.2104  Lpgra=2.3944  Total=2.6048
+[Round 2, Epoch 6] Lmix(ce)=0.1750  Lpgra=2.3995  Total=2.5745
+[Round 2, Epoch 7] Lmix(ce)=0.1951  Lpgra=2.3887  Total=2.5838
+------Evaluate at Round 2 on 480 Data-----
+------Train at Round 3 with 180 Annotated Data and 4140 Unlabeled Data-----
+[Round 3, Epoch 0] Lmix(ce)=0.1854  Lpgra=2.3741  Total=2.5595
+[Round 3, Epoch 1] Lmix(ce)=0.1155  Lpgra=2.3602  Total=2.4758
+[Round 3, Epoch 2] Lmix(ce)=0.1381  Lpgra=2.3700  Total=2.5081
+[Round 3, Epoch 3] Lmix(ce)=0.1921  Lpgra=2.3818  Total=2.5739
+[Round 3, Epoch 4] Lmix(ce)=0.1492  Lpgra=2.3854  Total=2.5346
+[Round 3, Epoch 5] Lmix(ce)=0.3236  Lpgra=2.3572  Total=2.6808
+[Round 3, Epoch 6] Lmix(ce)=0.1861  Lpgra=2.3613  Total=2.5474
+[Round 3, Epoch 7] Lmix(ce)=0.1371  Lpgra=2.3495  Total=2.4866
+------Evaluate at Round 3 on 480 Data-----
+------Train at Round 4 with 186 Annotated Data and 4134 Unlabeled Data-----
+[Round 4, Epoch 0] Lmix(ce)=0.1782  Lpgra=2.3475  Total=2.5257
+[Round 4, Epoch 1] Lmix(ce)=0.1612  Lpgra=2.3662  Total=2.5274
+[Round 4, Epoch 2] Lmix(ce)=0.1157  Lpgra=2.3667  Total=2.4824
+[Round 4, Epoch 3] Lmix(ce)=0.1836  Lpgra=2.3418  Total=2.5254
+[Round 4, Epoch 4] Lmix(ce)=0.1694  Lpgra=2.3488  Total=2.5182
+[Round 4, Epoch 5] Lmix(ce)=0.1644  Lpgra=2.3396  Total=2.5040
+[Round 4, Epoch 6] Lmix(ce)=0.1268  Lpgra=2.3440  Total=2.4707
+[Round 4, Epoch 7] Lmix(ce)=0.1453  Lpgra=2.3691  Total=2.5144
+------Evaluate at Round 4 on 480 Data-----
+------Train at Round 5 with 189 Annotated Data and 4131 Unlabeled Data-----
+[Round 5, Epoch 0] Lmix(ce)=0.1169  Lpgra=2.3490  Total=2.4659
+[Round 5, Epoch 1] Lmix(ce)=0.1447  Lpgra=2.3340  Total=2.4787
+[Round 5, Epoch 2] Lmix(ce)=0.1209  Lpgra=2.3327  Total=2.4536
+[Round 5, Epoch 3] Lmix(ce)=0.1089  Lpgra=2.3293  Total=2.4382
+[Round 5, Epoch 4] Lmix(ce)=0.1045  Lpgra=2.3271  Total=2.4317
+[Round 5, Epoch 5] Lmix(ce)=0.1130  Lpgra=2.3372  Total=2.4502
+[Round 5, Epoch 6] Lmix(ce)=0.1793  Lpgra=2.3287  Total=2.5080
+[Round 5, Epoch 7] Lmix(ce)=0.0840  Lpgra=2.3227  Total=2.4067
+------Evaluate at Round 5 on 480 Data-----
+------Train at Round 6 with 198 Annotated Data and 4122 Unlabeled Data-----
+[Round 6, Epoch 0] Lmix(ce)=0.1160  Lpgra=2.3495  Total=2.4655
+[Round 6, Epoch 1] Lmix(ce)=0.1256  Lpgra=2.3217  Total=2.4473
+[Round 6, Epoch 2] Lmix(ce)=0.0991  Lpgra=2.3418  Total=2.4409
+[Round 6, Epoch 3] Lmix(ce)=0.1476  Lpgra=2.3393  Total=2.4869
+[Round 6, Epoch 4] Lmix(ce)=0.1314  Lpgra=2.3462  Total=2.4775
+[Round 6, Epoch 5] Lmix(ce)=0.0744  Lpgra=2.3228  Total=2.3971
+[Round 6, Epoch 6] Lmix(ce)=0.1053  Lpgra=2.3270  Total=2.4323
+[Round 6, Epoch 7] Lmix(ce)=0.1473  Lpgra=2.3179  Total=2.4651
+------Evaluate at Round 6 on 480 Data-----
+------Train at Round 7 with 208 Annotated Data and 4112 Unlabeled Data-----
+[Round 7, Epoch 0] Lmix(ce)=0.1186  Lpgra=2.3238  Total=2.4423
+[Round 7, Epoch 1] Lmix(ce)=0.0917  Lpgra=2.3552  Total=2.4469
+[Round 7, Epoch 2] Lmix(ce)=0.0974  Lpgra=2.3226  Total=2.4200
+[Round 7, Epoch 3] Lmix(ce)=0.0750  Lpgra=2.3194  Total=2.3945
+[Round 7, Epoch 4] Lmix(ce)=0.1032  Lpgra=2.3259  Total=2.4291
+[Round 7, Epoch 5] Lmix(ce)=0.0985  Lpgra=2.3573  Total=2.4558
+[Round 7, Epoch 6] Lmix(ce)=0.0631  Lpgra=2.3385  Total=2.4016
+[Round 7, Epoch 7] Lmix(ce)=0.0947  Lpgra=2.3307  Total=2.4255
+------Evaluate at Round 7 on 480 Data-----
+------Train at Round 8 with 218 Annotated Data and 4102 Unlabeled Data-----
+[Round 8, Epoch 0] Lmix(ce)=0.1021  Lpgra=2.3199  Total=2.4219
+[Round 8, Epoch 1] Lmix(ce)=0.0818  Lpgra=2.4598  Total=2.5416
+[Round 8, Epoch 2] Lmix(ce)=0.1313  Lpgra=2.3519  Total=2.4832
+[Round 8, Epoch 3] Lmix(ce)=0.1432  Lpgra=2.3122  Total=2.4554
+[Round 8, Epoch 4] Lmix(ce)=0.0855  Lpgra=2.3420  Total=2.4275
+[Round 8, Epoch 5] Lmix(ce)=0.0883  Lpgra=2.3989  Total=2.4872
+[Round 8, Epoch 6] Lmix(ce)=0.1138  Lpgra=2.3024  Total=2.4162
+[Round 8, Epoch 7] Lmix(ce)=0.2061  Lpgra=2.3504  Total=2.5565
+------Evaluate at Round 8 on 480 Data-----

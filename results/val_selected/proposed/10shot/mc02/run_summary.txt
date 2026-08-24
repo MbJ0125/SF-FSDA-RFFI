@@ -1,0 +1,8 @@
+name=finalvs_10s_mc02
+seed=2027
+shots=10
+label_universe=160 / pool=4320
+num_round=8 | B_per_round=432
+best_acc=96.67%
+acc_history=82.63, 92.92, 95.83, 96.25, 96.25, 96.46, 96.25, 94.58, 96.67
+time_sec=883.11

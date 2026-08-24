@@ -1,0 +1,22 @@
+{
+  "name": "finalvs_5s_mc04",
+  "seed": 2029,
+  "shots": 5,
+  "lu_size": 80,
+  "n_pool": 4320,
+  "num_round": 8,
+  "b_per_round": 432,
+  "time_sec": 800.04,
+  "best_acc": 95.62,
+  "acc_history": [
+    82.63,
+    90.21,
+    93.96,
+    95.21,
+    94.79,
+    95.62,
+    95.62,
+    95.21,
+    95.42
+  ]
+}
