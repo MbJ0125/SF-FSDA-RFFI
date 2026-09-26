@@ -121,7 +121,7 @@ Mirrors Section IV-A of the paper; values below are the defaults used by the scr
 
 > **Note on `gamma`.** The paper's Eq. (15) writes `gamma = 0.9` as the weight on the *previous* center. The code passes `--gamma 0.1` (`mining/strategy.py`), where the coefficient weights the *current* center, so `0.1` in code is the same setting as `gamma = 0.9` in the paper.
 
-> **Note on early stopping.** Early stopping is **disabled** for the reported runs (`early_stop_patience=0` in `run_final_valselect.py`); all eight rounds are kept and the best validation checkpoint is selected afterwards.
+> **Checkpoint selection.** All eight adaptation rounds are run and the checkpoint with the highest validation accuracy is selected afterwards (`early_stop_patience=0` in `run_final_valselect.py`).
 
 ## Usage
 
