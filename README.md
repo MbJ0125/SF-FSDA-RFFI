@@ -109,6 +109,20 @@ Notes:
 
 We evaluate on the **ORACLE** RF fingerprint dataset (code path: `ORACLE-S`), source scenario `S1` → target scenario `S2`, `62ft` features, 16 device classes. During pretraining, 4800 source samples are used for training and 1200 for validation; during adaptation, only few-shot labeled (5-/10-shot) and unlabeled target samples are available. Adapt the paths in the run scripts (`rf_root`) to your local layout.
 
+## Experimental setup
+
+Mirrors Section IV-A of the paper; values below are the defaults used by the scripts in `code/`.
+
+**Data.** ORACLE `S1 → S2` (62 ft) cross-channel task with 16 shared devices. Source pretraining uses 4800 training and 1200 validation samples. The target set comprises a 4800-sample adaptation pool and a 1600-sample independent test set; 30 samples/class (480 total, seed 2025) are held out from the pool for validation, leaving 4320. Under 5-/10-shot settings, 5/10 samples per class constitute the labeled set (80/160 total), yielding 4240/4160 unlabeled samples. Five Monte-Carlo runs adopt seeds 2025–2029. Validation guides hyperparameter tuning and checkpoint selection; the test set is reserved exclusively for final evaluation.
+
+**Source pretraining.** MSCAN [15] backbone (the repository's `--net macnn` option), optimized by SGD with momentum 0.9, Nesterov and weight decay 1e-3 for 120 epochs at base LR 1e-4 with polynomial decay `(1 + 10 · iter/max_iter)^-0.75`.
+
+**Adaptation.** Backbone/head learning rates 1e-5 / 5e-4 with the same optimizer settings and per-round decay; batch size 64; gradient clipping 1.0; label smoothing 0.05; eight adaptation rounds of eight inner epochs, freezing the backbone for the first two rounds. We set `B = 5/10` for 5-/10-shot, with fixed `tau = 0.5`, `beta = 1`, and a class-center EMA coefficient of `gamma = 0.9`. Random RF Signal Masking occludes continuous time-domain segments with probability 0.5 and ratio `rho = 0.6/0.4` for 5-/10-shot. Features and prototypes are L2-normalized for the cosine-similarity computation, whereas the EMA-updated centers keep raw feature means.
+
+> **Note on `gamma`.** The paper's Eq. (15) writes `gamma = 0.9` as the weight on the *previous* center. The code passes `--gamma 0.1` (`mining/strategy.py`), where the coefficient weights the *current* center, so `0.1` in code is the same setting as `gamma = 0.9` in the paper.
+
+> **Note on early stopping.** Early stopping is **disabled** for the reported runs (`early_stop_patience=0` in `run_final_valselect.py`); all eight rounds are kept and the best validation checkpoint is selected afterwards.
+
 ## Usage
 
 ### 1. Train the source model
