@@ -5,8 +5,8 @@ Final re-run with validation-set model selection
 ================================================
 Purpose
 -------
-The paper's final numbers (95.50 / 97.30) were produced by `adapt_target`
-selecting the best round ON THE S2 TEST SET (adapt_target.py:818-831, 984).
+The previous numbers (95.50 / 97.30), since superseded, were produced by
+`adapt_target` selecting the best round ON THE S2 TEST SET (adapt_target.py:818-831, 984).
 That is a second test-set-leakage point (the first is hyperparameter selection,
 handled by run_hp_validation.py). To make the revision honest and consistent,
 this script re-runs the FINAL experiments with a single, clean protocol:
@@ -27,6 +27,9 @@ This mirrors run_hp_validation.py but runs ONLY the chosen operating points,
 with mc_runs=5 (seeds 2025-2029), and additionally records the TEST accuracy
 of the validation-selected checkpoint (and of every saved round, so the
 sensitivity of the result to the selection rule can be reported).
+
+This script produces the numbers reported in Table I of the paper:
+95.06 +/- 0.84 (5-shot) and 97.40 +/- 0.58 (10-shot).
 
 Recommended environment (verified on this machine):
   conda activate lftl        # torch 2.7.0+cu128, CUDA

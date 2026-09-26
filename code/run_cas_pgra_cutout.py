@@ -15,9 +15,11 @@ SEED_BASE = 2025
 BASE = "D:/Pycharm/code/lftl-main/_experiments/exps_oracle/uda_rf_62ft"
 # Shot 配置：(shot, cd_ratio, uct_lambda, query_budget, cutout_ratio)
 # cutout_ratio 来自 results_table.xlsx Table 6 的扫参最优结果
+# 注意：本脚本按 S2 测试集选最优轮，因此括号里的 mean 是"测试集选模型"的旧结果。
+#       论文 Table I 的最终数字（95.06 / 97.40）改用验证集选模型，见 run_final_valselect.py。
 SHOT_CFGS = [
-    (5,  0.9, 0.1, 5,  0.6),   # 5-shot best: cutout=0.6 → mean=95.50%
-    (10, 0.7, 0.9, 10, 0.4),   # 10-shot best: cutout=0.4 → mean=97.30%
+    (5,  0.9, 0.1, 5,  0.6),   # 5-shot best: cutout=0.6 → mean=95.50% (test-set selection)
+    (10, 0.7, 0.9, 10, 0.4),   # 10-shot best: cutout=0.4 → mean=97.30% (test-set selection)
 ]
 
 OUT_ROOT = "exp_cas_pgra1_cutout"

@@ -29,10 +29,19 @@ Reported numbers use **validation-set model selection** (see *Model-selection pr
 
 | Method | 5-shot Acc. (%) | 10-shot Acc. (%) |
 | :--- | :---: | :---: |
+| Source Only | 82.63 | — |
+| CORAL [8] | 87.56 ± 0.56 | — |
+| MMD [9] | 87.46 ± 1.15 | — |
+| DANN [10] | 86.34 ± 0.32 | — |
+| MixUp [16] | 81.79 ± 3.14 | — |
+| Fine-tune [17] | 85.09 ± 0.77 | 85.78 ± 0.61 |
+| Linear Probe | 87.25 ± 1.22 | 88.09 ± 0.60 |
 | MME [13] | 94.91 ± 0.35 | 95.51 ± 0.76 |
 | **Our proposed (SF-FSDA)** | **95.06 ± 0.84** | **97.40 ± 0.58** |
 
-The framework outperforms representative baselines (Source Only, CORAL, MMD, DANN, MixUp, Fine-tune, Linear Probe, MME) by **1.18% (5-shot)** and **0.48% (10-shot)** under the same protocol, and achieves a statistically significant gain over MME at 10-shot (paired t-test, p < 0.01).
+`—` denotes settings not reported in Table I of the paper; reference numbers follow that table.
+
+CORAL [8], MMD [9], and DANN [10] improve over Source Only but remain limited under cross-channel shift. MixUp [16] does not explicitly address domain discrepancy, while fine-tuning [17] and linear probing are constrained by scarce target supervision. **MME [13] uses full labeled source data during adaptation and thus benefits from both source and target information.** Despite being source-free, our method achieves 95.06 ± 0.84 and 97.40 ± 0.58 under 5-shot and 10-shot, respectively. With identical few-shot splits, seeds, and validation-based model selection, it **performs comparably to MME at 5-shot** and **improves 10-shot accuracy by 1.89 pp** (p = 0.0077, paired t-test).
 
 ### Ablation study
 
@@ -77,17 +86,17 @@ results/
 
 ## Requirements
 
-Tested with `python=3.10` and a CUDA-enabled `torch=2.3.0` build. Install the dependencies:
+Tested with `python=3.10` and a CUDA-enabled `torch=2.7.0+cu128` build. Install the dependencies:
 
 ```bash
-pip install torch==2.3.0 torchvision==0.18.0 numpy scikit-learn Pillow
+pip install torch==2.7.0 torchvision==0.22.0 numpy scikit-learn Pillow
 ```
 
 | Package | Version | Purpose |
 | :--- | :--- | :--- |
-| python | 3.10 | runtime |
-| torch | 2.3.0 | model training & adaptation |
-| torchvision | 0.18.0 | data transforms (matches torch 2.3.0) |
+| python | 3.10.20 | runtime |
+| torch | 2.7.0+cu128 | model training & adaptation |
+| torchvision | 0.22.0 | data transforms (matches torch 2.7.0) |
 | numpy | ≥ 1.24 | RF-signal processing, metrics |
 | scikit-learn | ≥ 1.3 | data splitting, evaluation metrics |
 | Pillow | ≥ 10.0 | image-style dataset loading |
