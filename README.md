@@ -117,7 +117,7 @@ We evaluate on the **ORACLE** RF fingerprint dataset (code path: `ORACLE-S`), so
 python train_source.py \
     --dataset rf --rf_root <path/to/ORACLE-S> \
     --s_folder S1 --rf_ft 62ft \
-    --output ckps/source/ --max_epoch 10
+    --output ckps/source/ --max_epoch 120
 ```
 
 ### 2. Source-free few-shot adaptation on the target
